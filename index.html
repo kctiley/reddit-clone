@@ -17,27 +17,63 @@
   <script src="./js/filters.js" type="text/javascript"></script>
   <script src="./js/services.js" type="text/javascript"></script>
 </head>
-  <body>
+  <body ng-controller="myController">
     <nav class="navbar navbar-default main-nav">
       <h2 class="inline">Reddit Clone</h2>
-      <h4 class="inline"><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
-      <input class="inline" placeholder="Search">
-      <h4 class="inline">Sort By Votes</h4>
-      <select>
-        <option value="up">Up</option>
-        <option value="down">Down</option>
-      </select>>
-    </nav>    
-      <div ng-controller="myController" ng-model="initialText">
-        <input type="text" ng-model="greeting"></p>
-        <p>{{ greeting }}</p>
-      <!-- add content here -->
+      <div class="inline submit-post">
+        <a ng-click="showForm()">
+          <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
+        </a>
       </div>
-   
-    <div ng-view></div>
-    
+      <input class="inline" placeholder="Search">
+      <div class="sort-by inline">
+        <h4>Sort By Votes</h4>
+      </div>
+      <select>
+        <option value="votes">Votes</option>
+        <option value="date">Date</option>
+        <option value="title">Title</option>
+      </select>>
+    </nav> 
+    <div class="col-md-12">
+      <div class="col-md-1">
+      </div>
+      <div ng-show="displayForm" class="col-md-10 submit-post-form">
+        <form name="postform" ng-submit="submit()">
+          <p>Add a Post</p>
+          <label>Title</label>
+          <input class="form-control" type="text" placeholder="Title" ng-model="title">
+          <label>Author</label>
+          <input class="form-control" type="text" placeholder="Author" ng-model="author" required>
+          <label>Image URL</label>
+          <input class="form-control" type="text" placeholder="Image URL" ng-model="imageURL" required>
+          <label>Description</label>
+          <input class="form-control" type="text" placeholder="Description" ng-model="description" required>
+          <p ng-show="notValid" ng-class="{red: true}">All Fields Required</p>
+          <br>
+          <input type="submit" value="Submit Post" class="submit">
+        </form>
+      </div> 
+      <div class="col-md-1">
+      </div>
+    </div>  
+    <div id="all-posts" ng-repeat="post in posts" class="col-md-12">
+      <div class="col-md-1">
+      </div>
+      <div class="each-post col-md-10">
+        <div >
+          <div class="col-md-1 inline">
+            <img src="https://s-media-cache-ak0.pinimg.com/736x/b2/97/58/b2975870ad8a9caa626b589ea4d6cb1e.jpg" >
+          </div>
+          <div class="col-md-4 inline">
+            <p class="inline">{{post.title}}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+        <div class="col-md-1">
+    </div>   
 
-    <!-- scripts -->
 
   </body>
 </html>
