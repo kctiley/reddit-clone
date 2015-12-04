@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app='redditClone'>
+<head>
+  <title>Angular Reddit Clone</title>
+  <base href="/">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./css/main.css" rel="stylesheet" media="screen">
+  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+  <script src="./js/app.js" type="text/javascript"></script>
+  <script src="./js/controllers.js" type="text/javascript"></script>
+  <script src="./js/directives.js" type="text/javascript"></script>
+  <script src="./js/filters.js" type="text/javascript"></script>
+  <script src="./js/services.js" type="text/javascript"></script>
+</head>
+  <body>
+    <nav class="navbar navbar-default main-nav">
+      <h2 class="inline">Reddit Clone</h2>
+      <h4 class="inline"><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
+      <input class="inline" placeholder="Search">
+      <h4 class="inline">Sort By Votes</h4>
+      <select>
+        <option value="up">Up</option>
+        <option value="down">Down</option>
+      </select>>
+    </nav>    
+      <div ng-controller="myController" ng-model="initialText">
+        <input type="text" ng-model="greeting"></p>
+        <p>{{ greeting }}</p>
+      <!-- add content here -->
+      </div>
+   
+    <div ng-view></div>
+    
+
+    <!-- scripts -->
+
+  </body>
+</html>
