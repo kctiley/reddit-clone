@@ -8,6 +8,7 @@ body {
 
 .inline {
   display: inline-block;
+  margin: 0px;
 }
 
 .main-nav h4 {
@@ -25,8 +26,9 @@ body {
 }
 
 .each-post{
+  padding: 1px;
   background: rgba(247, 240, 213, .5);
-  margin: 10px;
+  margin: 2px;
   border: 1px solid gray;
   border-radius: 4px;
 }
@@ -36,7 +38,16 @@ body {
 }
 
 img {
-  height: 125px;
-  width: 150px;
-  margin: 10px;
+  /*height: 125px;*/
+  margin: 0px;
+  padding:1px;
+  width: 100%;
+}
+
+.right {
+  text-align: right;
+}
+
+.title {
+  font-weight: bold;
 }

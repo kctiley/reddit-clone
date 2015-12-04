@@ -42,7 +42,7 @@
         <form name="postform" ng-submit="submit()">
           <p>Add a Post</p>
           <label>Title</label>
-          <input class="form-control" type="text" placeholder="Title" ng-model="title">
+          <input class="form-control" type="text" placeholder="Title" ng-model="title" required>
           <label>Author</label>
           <input class="form-control" type="text" placeholder="Author" ng-model="author" required>
           <label>Image URL</label>
@@ -62,11 +62,23 @@
       </div>
       <div class="each-post col-md-10">
         <div >
-          <div class="col-md-1 inline">
+          <div class="col-md-3 inline">
             <img src="https://s-media-cache-ak0.pinimg.com/736x/b2/97/58/b2975870ad8a9caa626b589ea4d6cb1e.jpg" >
           </div>
-          <div class="col-md-4 inline">
-            <p class="inline">{{post.title}}</p>
+          <div class="col-md-9 inline" >
+            <div>
+              <h5 class="title inline">{{post.title}}</h5>
+              <h6 class="title inline"> <span class="glyphicon glyphicon-arrow-down"></span><span class="glyphicon glyphicon-arrow-up">{{upDownCount}}</h6>
+            </div>
+            <p class="right">{{post.author}}</p>
+            <p>{{post.description}}</p>
+            <div>
+              <ul>
+                <li class="inline">{{ post.postDate | date: "EEEE 'at' h:mm a" }} | </li>
+                <li class="inline">Comments | </li>
+                <li class="inline" ng-click="addComment()">Add Comment</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

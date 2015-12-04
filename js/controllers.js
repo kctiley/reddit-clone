@@ -17,7 +17,7 @@ app.controller('myController', function($scope) {
     $scope.post = {
       commentsShow: false,
       commentForm: false,
-      postDate: Date(),
+      postDate: new Date(),
       title: $scope.title,
       author: $scope.author,
       imageURL: $scope.imageURL,
