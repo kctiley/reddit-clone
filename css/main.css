@@ -30,7 +30,7 @@ body {
 }
 
 .each-post{
-  padding: 1px;
+  padding: 10px;
   background: rgba(247, 240, 213, .5);
   margin: 2px;
   border: 1px solid gray;

@@ -27,11 +27,14 @@
       <div class="sort-by inline">
         <h4 id="sort-by">Sort By</h4>
       </div>
-      <select>
-        <option value="votes">Votes</option>
-        <option value="date">Date</option>
-        <option value="title">Title</option>
-      </select>>
+      <select onchange="order(this.value)">
+        <option value='numberOfVotes'>Votes</option>
+        <option value='postDate'>Date</option>
+        <option value='title'>Title</option>
+      </select>
+      <a href="#" ng-click="order('numberOfVotes')">Votes</a>
+      <a href="#" ng-click="order('postDate')">Date</a>
+      <a href="#" ng-click="order('title')">Title</a>
     </nav> 
     <div class="col-md-12">
       <div class="col-md-1">
@@ -55,7 +58,7 @@
       <div class="col-md-1">
       </div>
     </div>  
-    <div id="all-posts" ng-repeat="post in posts" class="col-md-12">
+    <div id="all-posts" ng-repeat="post in posts | orderBy:predicate:reverse " class="col-md-12">
       <div class="col-md-1">
       </div>
       <div class="each-post col-md-10">
