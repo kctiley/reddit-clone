@@ -12,12 +12,30 @@ body {
   padding: 5px 30px 5px 30px;
 }
 
-#sort-by {
-  padding-right: 2px;
+.main-title {
+  margin-left: 40px;
+}
+
+.search-input {
+  margin-left: 50px;
+}
+
+.btn.sort-by.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+}
+
+.btn.sort-by.dropdown-toggle:hover {
+  font-weight: bold;
+}
+
+.sort-by {
+  margin-left: 50px;
+  color: black;
 }
 
 .submit-post {
-  margin-left: 20px;
+  margin-left: 100px;
 }
 .submit-post:hover {
   color: blue;
@@ -52,13 +70,37 @@ img {
   text-align: right;
 }
 
+/*.myUpArrow:before {
+    content: "\f164";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+--adjust as necessary--
+    text-shadow: 4px 4px 4px #888888;
+    color: #000;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+*/
 .upDownArrows {
   color: blue;
-  box-shadow: 4px 4px 4px #888888;
+  text-shadow: 4px 4px 4px #888888;
   margin-left: 4px;
   margin-right: 4px;
-  background: #EBF4FA;
+  background: none;
   border-radius: 20px;
+}
+
+.upDownArrows:hover {
+  cursor:pointer;
+}
+
+.glyphicon-arrow-up{
+  background-color: none;
 }
 
 .upDownContainer {

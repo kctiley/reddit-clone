@@ -4,6 +4,7 @@
   <title>Angular Reddit Clone</title>
   <base href="/">
   <meta charset="UTF-8">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">  
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="./css/main.css" rel="stylesheet" media="screen">
@@ -18,24 +19,22 @@
   <script src="./js/services.js" type="text/javascript"></script>
 </head>
   <body ng-controller="myController">
-    <nav class="navbar navbar-default main-nav">
-      <h2 class="inline">Reddit Clone</h2>
-      <div class="inline submit-post" ng-click="showForm()">
-        <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
-      </div>
-      <input class="inline" ng-model="search" placeholder="Search">
-      <div class="sort-by inline">
-        <h4 id="sort-by">Sort By</h4>
-      </div>
-      <select onchange="order(this.value)">
-        <option value='numberOfVotes'>Votes</option>
-        <option value='postDate'>Date</option>
-        <option value='title'>Title</option>
-      </select>
-      <a href="#" ng-click="order('numberOfVotes')">Votes</a>
-      <a href="#" ng-click="order('postDate')">Date</a>
-      <a href="#" ng-click="order('title')">Title</a>
-    </nav> 
+      <nav class="navbar navbar-default main-nav">
+        <h2 class="inline main-title">Reddit Clone</h2>
+        <div class="inline submit-post" ng-click="showForm()">
+          <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
+        </div>
+        <input class="inline search-input" ng-model="search" placeholder="Search">
+        <div class="dropdown inline">
+          <button class="btn sort-by dropdown-toggle" type="button" data-toggle="dropdown">Sort By
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#" ng-click="order('numberOfVotes')">Votes</a></li>
+            <li><a href="#" ng-click="order('postDate')">Date</a><li>
+            <li><a href="#" ng-click="order('title')">Title</a></li>
+          </ul>
+        </div>
+      </nav> 
     <div class="col-md-12">
       <div class="col-md-1">
       </div>
@@ -59,7 +58,6 @@
       </div>
     </div>  
     <div id="all-posts" ng-repeat="post in posts | orderBy:predicate:reverse | filter: search" class="col-md-12">
-    <!-- <div id="all-posts" ng-repeat="post in posts | orderBy: sort | filter: search" class="col-md-12"> -->
       <div class="col-md-1">
       </div>
       <div class="each-post col-md-10">
@@ -70,6 +68,7 @@
           <div class="col-md-9 inline" >
             <div>
               <h5 class="title inline">{{post.title}}</h5>
+              <!-- <h5 class="inline myUpArrow"></h5> -->
               <h6 class=" upDownContainer inline"><span class="glyphicon glyphicon-arrow-down upDownArrows" ng-click="downVote( this.post)"></span><span class="glyphicon glyphicon-arrow-up upDownArrows" ng-click="upVote(this.post)" ></span></h6>
               <h5 class="inline">{{post.numberOfVotes}}</h5>
             </div>
