@@ -19,7 +19,7 @@ app.controller('myController', function($scope) {
   $scope.posts = [
     {
       title: "50 Shades",
-      postDate: "Sat Dec 01 2015 12:23:04 GMT-0700 (MST)",
+      postDate: "Sat Dec 01 2015 12:23:04",
       author: "Earnest Hemmingway",
       imageURL: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ace_motorcycle_1922.JPG",
       description: "This is a Ace_motorcycle_1922,Fap vegan normcore keffiyeh street art slow-carb. Synth microdosing slow-carb bushwick, godard flannel ethical sartorial disrupt umami sustainable gentrify banh mi. Tumblr post-ironic polaroid pickled. Polaroid cliche lomo, kitsch tofu art party chartreuse post-ironic XOXO flannel kogi next level banh mi before they sold out mustache.",
@@ -28,7 +28,7 @@ app.controller('myController', function($scope) {
     },
     {
       title: "Cat in the Hat",
-      postDate: "Sat Dec 03 2015 12:23:04 GMT-0700 (MST)",
+      postDate: "Sat Dec 03 2015 12:23:04",
       author: "Dr. Zuess",
       imageURL: "http://www.childsplayaz.org/sysimg/large-Cat-Fish-JugglingonBall-WEB.jpg",
       description: "Catt cat kat,Fap vegan normcore keffiyeh street art slow-carb. Synth microdosing slow-carb bushwick, godard flannel ethical sartorial disrupt umami sustainable gentrify banh mi. Tumblr post-ironic polaroid pickled. Polaroid cliche lomo, kitsch tofu art party chartreuse post-ironic XOXO flannel kogi next level banh mi before they cat",
