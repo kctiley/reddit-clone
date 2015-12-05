@@ -75,9 +75,21 @@
             <div>
               <ul>
                 <li class="inline">{{ post.postDate | date: "EEEE 'at' h:mm a" }} | </li>
-                <li class="inline">Comments | </li>
-                <li class="inline" ng-click="addComment()">Add Comment</li>
+                <li class="inline submit-post" ng-click="showAllPostComments(this.post)">Comments | </li>
+                <li class="inline submit-post" ng-click="showAddComment(this.post)">Add Comment</li>
               </ul>
+            </div>
+            <div ng-show="displayAddComment">
+              <ul>
+                <li class="inline">Author</li>
+                <input class="inline" placeholder="username" ng-model="commentUserName">
+                <li class="inline">Text</li>
+                <input class="inline" placeholder="comment text" ng-model="commentText">
+                <button class="inline" ng-click="addComment(this.post)">Add Comment</button>
+              </ul>              
+            </div>
+            <div ng-show="showComments" ng-repeat="comment in comments">
+              <p>{{comment.text}} {{comment.author}}</p>
             </div>
           </div>
         </div>

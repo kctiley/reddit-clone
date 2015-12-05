@@ -29,19 +29,16 @@ app.controller('myController', function($scope) {
       numberOfVotes: 1,
     },   
 
-
-
-
   ];
-  $scope.comments = [];
+  // $scope.comments = [{author:"klint", text: "was"}];
 
 
   $scope.submit = function(comments){
     idAcumulator++;
     $scope.form = false;
     $scope.post = {
-      commentsShow: false,
-      commentForm: false,
+      showComments: false,
+      showCommentForm: false,
       postDate: new Date(),
       title: $scope.title,
       author: $scope.author,
@@ -54,12 +51,6 @@ app.controller('myController', function($scope) {
     $scope.post = {};
   }
 
-  // $scope.showPosts = function(){
-  //   if($scope.showPosts.length > 0){
-  //     $scope.displayPosts = true;
-  //   }
-  // }
-
   $scope.upVote = function(post){
     this.numberOfVotes = post.numberOfVotes++;
   }
@@ -69,6 +60,32 @@ app.controller('myController', function($scope) {
     this.numberOfVotes = post.numberOfVotes--;
   }
 
+ 
+  $scope.showAddComment = function(post){
+    if(this.showCommentForm !== true ){
+      $scope.displayAddComment = true;
+    }
+    else $scope.displayAddComment = false;
+  }
+
+  $scope.addComment = function(post){
+    post.comments.push({
+      author: this.commentUserName,
+      text: this.commentText,
+    });
+    console.log(post.comments);
+
+    $scope.displayAddComment = false;
+  }
+
+  $scope.showAllPostComments = function(post){
+    if($scope.showComments !== true){
+      $scope.showComments = true;
+      this.comments = post.comments;
+      console.log("showAllPostComments post.comments... ", post.comments)
+    }
+    else $scope.showComments = false;
+  }
 
 });
 
