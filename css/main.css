@@ -1,7 +1,4 @@
-/*.navbar.navbar-default {
-  color: red;
-}
-*/
+
 body {
   background: rgba(201 ,212, 207, .5);
 }
@@ -15,8 +12,15 @@ body {
   padding: 5px 30px 5px 30px;
 }
 
+#sort-by {
+  padding-right: 2px;
+}
+
+.submit-post {
+  margin-left: 20px;
+}
 .submit-post:hover {
-  color:blue;
+  color: blue;
 }
 
 .submit {
@@ -48,6 +52,31 @@ img {
   text-align: right;
 }
 
+.upDownArrows {
+  color: blue;
+  box-shadow: 4px 4px 4px #888888;
+  margin-left: 4px;
+  margin-right: 4px;
+  background: #EBF4FA;
+  border-radius: 20px;
+}
+
+.upDownContainer {
+  padding: 10px;
+}
+
 .title {
   font-weight: bold;
+}
+
+.comments {
+  color: #307D7E;
+}
+
+.comment-text {
+  background-color: white;
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-left: 10px;
 }

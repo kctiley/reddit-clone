@@ -20,14 +20,12 @@
   <body ng-controller="myController">
     <nav class="navbar navbar-default main-nav">
       <h2 class="inline">Reddit Clone</h2>
-      <div class="inline submit-post">
-        <a ng-click="showForm()">
-          <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
-        </a>
+      <div class="inline submit-post" ng-click="showForm()">
+        <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
       </div>
       <input class="inline" placeholder="Search">
       <div class="sort-by inline">
-        <h4>Sort By Votes</h4>
+        <h4 id="sort-by">Sort By</h4>
       </div>
       <select>
         <option value="votes">Votes</option>
@@ -68,7 +66,8 @@
           <div class="col-md-9 inline" >
             <div>
               <h5 class="title inline">{{post.title}}</h5>
-              <h6 class="title inline"><span class="glyphicon glyphicon-arrow-down" ng-click="downVote(this.post)"></span><span class="glyphicon glyphicon-arrow-up" ng-click="upVote(this.post)" ></span>{{post.numberOfVotes}}</h6>
+              <h6 class=" upDownContainer inline"><span class="glyphicon glyphicon-arrow-down upDownArrows" ng-click="downVote( this.post)"></span><span class="glyphicon glyphicon-arrow-up upDownArrows" ng-click="upVote(this.post)" ></span></h6>
+              <h5 class="inline">{{post.numberOfVotes}}</h5>
             </div>
             <p class="right">{{post.author}}</p>
             <p>{{post.description}}</p>
@@ -88,8 +87,8 @@
                 <button class="inline" ng-click="addComment(this.post)">Add Comment</button>
               </ul>              
             </div>
-            <div ng-show="showComments" ng-repeat="comment in comments">
-              <p>{{comment.text}} {{comment.author}}</p>
+            <div class="comments" ng-show="showComments" ng-repeat="comment in comments">
+              <p><strong>{{comment.author}}</strong>: <span class="comment-text"> {{comment.text}}  </span></p>
             </div>
           </div>
         </div>

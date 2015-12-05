@@ -16,7 +16,7 @@ app.controller('myController', function($scope) {
       author: "Earnest Hemmingway",
       imageURL: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Ace_motorcycle_1922.JPG",
       description: "This is a Ace_motorcycle_1922,Fap vegan normcore keffiyeh street art slow-carb. Synth microdosing slow-carb bushwick, godard flannel ethical sartorial disrupt umami sustainable gentrify banh mi. Tumblr post-ironic polaroid pickled. Polaroid cliche lomo, kitsch tofu art party chartreuse post-ironic XOXO flannel kogi next level banh mi before they sold out mustache.",
-      comments: [],
+      comments: [{author: "Klint", text: "Eat my shorts!"}],
       numberOfVotes: 3,
     },
     {
@@ -34,7 +34,7 @@ app.controller('myController', function($scope) {
 
 
   $scope.submit = function(comments){
-    idAcumulator++;
+  //   idAcumulator++;
     $scope.form = false;
     $scope.post = {
       showComments: false,
