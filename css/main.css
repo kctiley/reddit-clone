@@ -1,6 +1,7 @@
 
 body {
-  background: rgba(201 ,212, 207, .5);
+  /*background: rgba(201 ,212, 207, .5);*/
+  background-color: white;
 }
 
 .inline {
@@ -10,6 +11,11 @@ body {
 
 .main-nav h4 {
   padding: 5px 30px 5px 30px;
+}
+
+#logo {
+  height: 100px;
+  width: 100px;
 }
 
 .main-title {
@@ -59,6 +65,8 @@ body {
   margin-top: 50px;
 }
 
+
+
 img {
   /*height: 125px;*/
   margin: 0px;
@@ -97,9 +105,9 @@ img {
 
 .upDownArrows:hover {
   cursor:pointer;
-}
+/*}*/
 
-.glyphicon-arrow-up{
+.glyphicon-arrow-up {
   background-color: none;
 }
 
