@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en" ng-app='redditClone'>
 <head>
-  <title>Angular Reddit Clone</title>
+  <title>redditClone</title>
   <base href="/">
   <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">  
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -19,9 +20,11 @@
   <script src="./js/services.js" type="text/javascript"></script>
 </head>
   <body ng-controller="myController">
+      <div><p id="top-border"></p></div>
       <nav class="navbar navbar-default main-nav">
-        <img id="logo" ng-src="images.jpeg">
-        <h2 class="inline main-title">Reddit Clone</h2>
+        <img id="logo" ng-src="images.png">
+        <h2 class="inline main-title">redditClone</h2>
+        <h7> By Klint Tiley </h7>
         <div class="inline submit-post" ng-click="showForm()">
           <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
         </div>
@@ -71,15 +74,16 @@
               <h5 class="title inline">{{post.title}}</h5>
               <!-- <h5 class="inline myUpArrow"></h5> -->
               <h6 class=" upDownContainer inline"><span class="glyphicon glyphicon-arrow-down upDownArrows" ng-click="downVote( this.post)"></span><span class="glyphicon glyphicon-arrow-up upDownArrows" ng-click="upVote(this.post)" ></span></h6>
-              <h5 class="inline">{{post.numberOfVotes}}</h5>
+              <h5 class="inline"><span ng-class="{'positive': post.numberOfVotes  > 0, 'negative': this.post.numberOfVotes < 0}">{{post.numberOfVotes}}</span>
+              </h5>
             </div>
             <p class="right">{{post.author}}</p>
             <p>{{post.description}}</p>
             <div>
               <ul>
                 <li class="inline">{{ post.postDate | date: "EEEE 'at' h:mm a" }} | </li>
-                <li class="inline submit-post" ng-click="showAllPostComments(this.post)">Comments | </li>
-                <li class="inline submit-post" ng-click="showAddComment(this.post)">Add Comment</li>
+                <li class="inline" ng-click="showAllPostComments(this.post)">Comments | </li>
+                <li class="inline" ng-click="showAddComment(this.post)">Add Comment</li>
               </ul>
             </div>
             <div ng-show="displayAddComment">

@@ -9,6 +9,17 @@ body {
   margin: 0px;
 }
 
+p#top-border: {
+  height: 20px;
+  color:yellow;
+  background-color: purple;
+}
+
+nav.navbar.navbar-default.main-nav {
+  background-color: #82CAFA; 
+  font-family: 'Open Sans', sans-serif; 
+}
+
 .main-nav h4 {
   padding: 5px 30px 5px 30px;
 }
@@ -105,7 +116,7 @@ img {
 
 .upDownArrows:hover {
   cursor:pointer;
-/*}*/
+}
 
 .glyphicon-arrow-up {
   background-color: none;
@@ -120,13 +131,22 @@ img {
 }
 
 .comments {
-  color: #307D7E;
+  color: black;
 }
 
 .comment-text {
+  color: #307D7E;
   background-color: white;
   border-radius: 4px;
   padding-left: 4px;
   padding-right: 4px;
   margin-left: 10px;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
 }

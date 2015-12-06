@@ -32,7 +32,7 @@ app.controller('myController', function($scope) {
       author: "Dr. Zuess",
       imageURL: "http://www.childsplayaz.org/sysimg/large-Cat-Fish-JugglingonBall-WEB.jpg",
       description: "Catt cat kat,Fap vegan normcore keffiyeh street art slow-carb. Synth microdosing slow-carb bushwick, godard flannel ethical sartorial disrupt umami sustainable gentrify banh mi. Tumblr post-ironic polaroid pickled. Polaroid cliche lomo, kitsch tofu art party chartreuse post-ironic XOXO flannel kogi next level banh mi before they cat",
-      comments: [],
+      comments: [{author: "Dan Shaffer", text: "Where are my car keys??"}],
       numberOfVotes: 4,
     },   
 
