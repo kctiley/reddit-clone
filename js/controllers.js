@@ -84,7 +84,10 @@ app.controller('myController', function($scope) {
     });
     console.log(post.comments);
 
-    $scope.showAddComment = false;
+    this.showAddComment = false;
+    this.commentUserName = '';
+    this.commentText = '';
+
   }
 
   $scope.clickComments = function(post){
