@@ -9,6 +9,7 @@
   <!-- load angular-moment -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">  
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -29,7 +30,7 @@
         <img id="logo" ng-src="images.png">
         <h2 class="inline main-title">redditClone</h2>
         <h7> By Klint Tiley </h7>
-        <div class="inline submit-post" ng-click="showForm()">
+        <div class="inline submit-post hover" ng-click="showForm()">
           <h4><span class="glyphicon glyphicon-plus"></span>Submit Post</h4>
         </div>
         <input class="inline search-input" ng-model="search" placeholder="Search">
@@ -46,7 +47,7 @@
     <div class="col-md-12">
       <div class="col-md-1">
       </div>
-      <div ng-show="displayForm" class="col-md-10 submit-post-form">
+      <div ng-show="displayForm" class="col-md-10 submit-post-form hover">
         <form name="postform" ng-submit="submit()">
           <p>Add a Post</p>
           <label>Title</label>
@@ -75,7 +76,7 @@
           </div>
           <div class="col-md-9 inline" >
             <div>
-              <h4 class="title inline">{{post.title}}</h4>
+              <h4 class="title inline">{{post.title | uppercase}}</h4>
               <!-- <h5 class="inline myUpArrow"></h5> -->
               <h6 class=" upDownContainer inline"><span class="glyphicon glyphicon-thumbs-down upDownArrows" ng-click="downVote( this.post)"></span><span class="glyphicon glyphicon-thumbs-up upDownArrows" ng-click="upVote(this.post)" ></span></h6>
               <h5 class="inline"><span ng-class="{'positive': post.numberOfVotes  > 0, 'negative': this.post.numberOfVotes < 0}">{{post.numberOfVotes}}</span>
@@ -86,11 +87,11 @@
             <div>
               <ul>
                 <li class="inline">Posted: <span am-time-ago="post.postDate"></span> | </li>
-                <li class="inline" ng-click="showAllPostComments(this.post)"><span class="fa fa-comments comment-icon"></span> Comments | </li>
-                <li class="inline" ng-click="showAddComment(this.post)"><span class="glyphicon glyphicon-pencil"></span> Add Comment</li>
+                <li class="inline hover" ng-click="clickComments(this.post)"><span class="fa fa-comments comment-icon"></span> Comments | </li>
+                <li class="inline hover" ng-click="clickAddComment(this.post)"><span class="glyphicon glyphicon-pencil"></span> Add Comment</li>
               </ul>
             </div>
-            <div ng-show="displayAddComment">
+            <div ng-show="showAddComment">
               <ul>
                 <li class="inline">Author</li>
                 <input class="inline" placeholder="username" ng-model="commentUserName">
@@ -99,7 +100,7 @@
                 <button class="inline" ng-click="addComment(this.post)">Add Comment</button>
               </ul>              
             </div>
-            <div class="comments" ng-show="showComments" ng-repeat="comment in comments">
+            <div class="comments" ng-show="showComments" ng-repeat="comment in this.post.comments">
               <p><strong>{{comment.author}}</strong>: <span class="comment-text"> {{comment.text}}  </span></p>
             </div>
           </div>

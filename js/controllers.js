@@ -40,10 +40,11 @@ app.controller('myController', function($scope) {
 
 
   $scope.submit = function(comments){
+  //   idAcumulator++;
     $scope.displayForm = false;
     $scope.post = {
       showComments: false,
-      showCommentForm: false,
+      showAddComment: false,
       postDate: new Date(),
       title: $scope.title,
       author: $scope.author,
@@ -66,11 +67,14 @@ app.controller('myController', function($scope) {
   }
 
  
-  $scope.showAddComment = function(post){
-    if(this.showCommentForm !== true ){
-      $scope.displayAddComment = true;
+  $scope.clickAddComment = function(post){
+    if(this.showAddComment !== true ){
+      this.showAddComment = true;
+      console.log("true")
     }
-    else $scope.displayAddComment = false;
+    else {this.showAddComment = false;
+      console.log("false")
+    }
   }
 
   $scope.addComment = function(post){
@@ -80,16 +84,17 @@ app.controller('myController', function($scope) {
     });
     console.log(post.comments);
 
-    $scope.displayAddComment = false;
+    $scope.showAddComment = false;
   }
 
-  $scope.showAllPostComments = function(post){
-    if($scope.showComments !== true){
-      $scope.showComments = true;
-      this.comments = post.comments;
-      console.log("showAllPostComments post.comments... ", post.comments)
+  $scope.clickComments = function(post){
+    if(this.showComments !== true){
+      this.showComments = true;
+      console.log("now true...")
     }
-    else $scope.showComments = false;
+    else {this.showComments = false;
+    console.log("now false...")
+    }
   }
 
 });
