@@ -9,7 +9,7 @@
   <!-- load angular-moment -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">  
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="./css/main.css" rel="stylesheet" media="screen">
@@ -69,26 +69,25 @@
       <div class="col-md-1">
       </div>
       <div class="each-post col-md-10">
-        <div >
+        
           <div class="col-md-3 inline">
             <img ng-src="{{post.imageURL}}" >
           </div>
           <div class="col-md-9 inline" >
             <div>
-              <h5 class="title inline">{{post.title}}</h5>
+              <h4 class="title inline">{{post.title}}</h4>
               <!-- <h5 class="inline myUpArrow"></h5> -->
-              <h6 class=" upDownContainer inline"><span class="glyphicon glyphicon-arrow-down upDownArrows" ng-click="downVote( this.post)"></span><span class="glyphicon glyphicon-arrow-up upDownArrows" ng-click="upVote(this.post)" ></span></h6>
+              <h6 class=" upDownContainer inline"><span class="glyphicon glyphicon-thumbs-down upDownArrows" ng-click="downVote( this.post)"></span><span class="glyphicon glyphicon-thumbs-up upDownArrows" ng-click="upVote(this.post)" ></span></h6>
               <h5 class="inline"><span ng-class="{'positive': post.numberOfVotes  > 0, 'negative': this.post.numberOfVotes < 0}">{{post.numberOfVotes}}</span>
               </h5>
             </div>
-            <p class="right">{{post.author}}</p>
+            <p class="right">by {{post.author}}</p>
             <p>{{post.description}}</p>
             <div>
               <ul>
-                <!-- <li class="inline">{{ post.postDate | date: "EEEE 'at' h:mm a" }} | </li> -->
-                <li class="inline"><span am-time-ago="post.postDate"></span> | </li>
-                <li class="inline" ng-click="showAllPostComments(this.post)">Comments | </li>
-                <li class="inline" ng-click="showAddComment(this.post)">Add Comment</li>
+                <li class="inline">Posted: <span am-time-ago="post.postDate"></span> | </li>
+                <li class="inline" ng-click="showAllPostComments(this.post)"><span class="fa fa-comments comment-icon"></span> Comments | </li>
+                <li class="inline" ng-click="showAddComment(this.post)"><span class="glyphicon glyphicon-pencil"></span> Add Comment</li>
               </ul>
             </div>
             <div ng-show="displayAddComment">
@@ -104,10 +103,10 @@
               <p><strong>{{comment.author}}</strong>: <span class="comment-text"> {{comment.text}}  </span></p>
             </div>
           </div>
-        </div>
+        
       </div>
-      </div>
-        <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
     </div>   
 
 

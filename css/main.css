@@ -16,6 +16,7 @@ p#top-border: {
 }
 
 nav.navbar.navbar-default.main-nav {
+  height: 100px;
   background-color: #82CAFA; 
   font-family: 'Open Sans', sans-serif; 
 }
@@ -25,8 +26,10 @@ nav.navbar.navbar-default.main-nav {
 }
 
 #logo {
-  height: 100px;
-  width: 100px;
+  margin-top: -15px;
+  /*border: 10px solid green;*/
+  height: 125px;
+  width: 125px;
 }
 
 .main-title {
@@ -63,10 +66,18 @@ nav.navbar.navbar-default.main-nav {
   background-color: blue;
   border-radius: 8px;
 }
-
+/*
+.each-post .backdrop {
+  background-image: url("../images/linen7.jpg");
+  opacity: .5; 
+}*/
 .each-post{
   padding: 10px;
-  background: rgba(247, 240, 213, .5);
+  /*background: rgba(247, 240, 213, .5);*/
+  /*background-image: url("../images/linen7.jpg");*/
+  /*opacity: .5;*/
+  background-color: #D1D0CE;
+  box-shadow: 4px 4px 4px #888888;
   margin: 2px;
   border: 1px solid gray;
   border-radius: 4px;
@@ -107,7 +118,7 @@ img {
 */
 .upDownArrows {
   color: blue;
-  text-shadow: 4px 4px 4px #888888;
+  text-shadow: 2px 2px 2px #888888;
   margin-left: 4px;
   margin-right: 4px;
   background: none;
@@ -149,4 +160,8 @@ img {
 
 .negative {
   color: red;
+}
+
+.comment-icon {
+  font-size: 20px;
 }
