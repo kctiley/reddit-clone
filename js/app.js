@@ -1,4 +1,4 @@
-var app = angular.module('redditClone', ['ngRoute'])
+var app = angular.module('redditClone', ['ngRoute','angularMoment'])
 
   app.config(function($routeProvider,$locationProvider,$httpProvider){
       

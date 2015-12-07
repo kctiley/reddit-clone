@@ -37,11 +37,9 @@ app.controller('myController', function($scope) {
     },   
 
   ];
-  // $scope.comments = [{author:"klint", text: "was"}];
 
 
   $scope.submit = function(comments){
-  //   idAcumulator++;
     $scope.displayForm = false;
     $scope.post = {
       showComments: false,

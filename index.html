@@ -4,6 +4,10 @@
   <title>redditClone</title>
   <base href="/">
   <meta charset="UTF-8">
+  <!-- load momentJS (required for angular-moment) -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  <!-- load angular-moment -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">  
@@ -81,7 +85,8 @@
             <p>{{post.description}}</p>
             <div>
               <ul>
-                <li class="inline">{{ post.postDate | date: "EEEE 'at' h:mm a" }} | </li>
+                <!-- <li class="inline">{{ post.postDate | date: "EEEE 'at' h:mm a" }} | </li> -->
+                <li class="inline"><span am-time-ago="post.postDate"></span> | </li>
                 <li class="inline" ng-click="showAllPostComments(this.post)">Comments | </li>
                 <li class="inline" ng-click="showAddComment(this.post)">Add Comment</li>
               </ul>
